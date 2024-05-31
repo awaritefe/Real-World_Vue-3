@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import EventListView from '../views/EventListView.vue'
 import EventDetailsView from '../views/EventDetailsView.vue'
 import AboutView from '../views/AboutView.vue'
-import NotFoundComponent from '@/components/NotFoundComponent.vue'
+import NotFoundComponent from '../views/NotFoundComponent.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
