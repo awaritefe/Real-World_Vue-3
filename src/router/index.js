@@ -3,6 +3,7 @@ import EventList from '../views/EventList.vue'
 import EventDetails from '../views/event/Details.vue'
 import EventRegister from '../views/event/Register.vue'
 import EventEdit from '../views/event/Edit.vue'
+import EventLayout from '../views/event/Layout.vue'
 import About from '../views/About.vue'
 import NotFoundComponent from '../views/NotFoundComponent.vue'
 
@@ -17,21 +18,26 @@ const router = createRouter({
     },
     {
       path: '/event/:id',
-      name: 'eventDetails',
+      name: 'eventLayout',
       props: true,
-      component: EventDetails
-    },
-    {
-      path: '/event/:id/register',
-      name: 'eventRegister',
-      props: true,
-      component: EventRegister
-    },
-    {
-      path: '/event/:id/edit',
-      name: 'eventEdit',
-      props: true,
-      component: EventEdit
+      component: EventLayout,
+      children: [
+        {
+          path: '',
+          name: 'eventDetails',
+          component: EventDetails
+        },
+        {
+          path: 'register',
+          name: 'eventRegister',
+          component: EventRegister
+        },
+        {
+          path: 'edit',
+          name: 'eventEdit',
+          component: EventEdit
+        }
+      ]
     },
     {
       path: '/about',
