@@ -26,7 +26,13 @@ onMounted(() => {
 <template>
   <div v-if="event">
     <h1>{{ event.title }}</h1>
-    <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
-    <p>{{ event.description }}</p>
+    <div id="nav">
+      <router-link :to="{ name: 'eventDetails', params: { id } }">Details</router-link>
+      |
+      <router-link :to="{ name: 'eventRegister', params: { id } }">Register</router-link>
+      |
+      <router-link :to="{ name: 'eventEdit', params: { id } }">Edit</router-link>
+    </div>
+    <p>Edit</p>
   </div>
 </template>

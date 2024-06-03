@@ -40,7 +40,7 @@ onMounted(() => {
   <div class="pagination">
     <Router-link
       id="page-prev"
-      :to="{ name: 'event-list', query: { page: page - 1 } }"
+      :to="{ name: 'eventList', query: { page: page - 1 } }"
       rel="prev"
       v-if="page != 1"
     >
@@ -48,7 +48,7 @@ onMounted(() => {
     </Router-link>
     <Router-link
       id="page-next"
-      :to="{ name: 'event-list', query: { page: page + 1 } }"
+      :to="{ name: 'eventList', query: { page: page + 1 } }"
       rel="next"
       v-if="hasNextPage"
     >
